@@ -1,0 +1,18 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile every program with warnings as errors
+        run: |
+          set -e
+          for f in $(find . -name '*.cpp' -not -path './.git/*' | sort); do
+            echo "Compiling $f"
+            g++ -std=c++17 -Wall -Wextra -Werror -o /tmp/program "$f"
+          done
