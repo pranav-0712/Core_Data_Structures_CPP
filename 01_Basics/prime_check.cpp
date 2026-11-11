@@ -1,25 +1,32 @@
-#include<iostream>
+// Check whether a number is prime.
+// Only divisors up to sqrt(n) need to be checked -> O(sqrt(n)).
+//
+// Input:  29
+// Output: prime
+#include <iostream>
 using namespace std;
 
 int main() {
-    int n ;
-    cout<<"Enter n:" ;
-    cin>>n ;
-    bool isprime = 1 ;
-    for(int i = 2; i<n;i++)
+    int n;
+    cout << "Enter n: ";
+    cin >> n;
 
-       if(n%i ==0){
-         isprime = 0 ;
-         break;}
-       
-         if(isprime ==  0)
+    if (n <= 1) {
+        cout << "neither prime nor composite" << endl;
+        return 0;
+    }
 
-       cout<<"not prime"<<endl;  
-        
-         else if(n==1)
+    bool isPrime = true;
+    for (int i = 2; (long long)i * i <= n; i++) {
+        if (n % i == 0) {
+            isPrime = false;
+            break;
+        }
+    }
 
-         cout<<"neither prime nor composite";
-
-         else
-       
-       cout<<"prime"<<endl;}  
+    if (isPrime)
+        cout << "prime" << endl;
+    else
+        cout << "not prime" << endl;
+    return 0;
+}

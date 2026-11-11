@@ -1,15 +1,20 @@
-#include<iostream>
+// if / else if / else: check whether a number is positive, negative or zero.
+//
+// Input:  -5
+// Output: a is negative
+#include <iostream>
 using namespace std;
-int main(){
-    int a;
-   cout<<"a = ";
-    cin>>a;
 
-    if (a>0)
-      cout<<"a is positive\n";
-    else if (a<0)
-      cout<<"a is negative\n";
-    else 
-      cout<<"a is zero\n";
-      return 0;  
+int main() {
+    int a;
+    cout << "a = ";
+    cin >> a;
+
+    if (a > 0)
+        cout << "a is positive\n";
+    else if (a < 0)
+        cout << "a is negative\n";
+    else
+        cout << "a is zero\n";
+    return 0;
 }

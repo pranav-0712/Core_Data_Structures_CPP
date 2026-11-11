@@ -27,7 +27,8 @@ int main() {
     std::cout << "Enter your first name: ";
     std::cin >> name; // Takes what you type and stores it in 'name'
 
-    std::cout << "\nHello, " << name << "! Let's check out some C++ basics.\n\n";
+    std::cout << "\nHello, " << name << "! Let's check out some C++ basics.\n";
+    std::cout << "Year: " << currentYear << " | Target GPA: " << targetGpa << "\n\n";
 
     // 5. Conditional Logic (if / else)
     // Making decisions based on conditions.
